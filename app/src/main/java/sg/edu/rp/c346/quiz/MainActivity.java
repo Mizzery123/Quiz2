@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String cor = tv.getText().toString();
                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                i.putExtra("coords", cor);
+                i.putExtra("cor", cor);
                 startActivity(i);
             }
         });

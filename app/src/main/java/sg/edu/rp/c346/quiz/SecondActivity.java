@@ -32,10 +32,17 @@ public class SecondActivity extends AppCompatActivity {
         final SupportMapFragment mapFragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
 
         Intent i = getIntent();
-        final String coords = i.getStringExtra("coords");
-        String[] seperate = coords.split(",");
-        final Double lat = Double.parseDouble(seperate[0].trim());
-        final Double lng = Double.parseDouble(seperate[1].trim());
+        final String cor = i.getStringExtra("cor");
+
+
+        String[] separate = cor.split(",");
+        final Double lat = Double.parseDouble(separate[0].trim());
+        final Double lng = Double.parseDouble(separate[1].trim());
+
+
+
+
+
 
         mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -48,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
                         MarkerOptions()
                         .position(pos)
                         .title("Your location is here")
-                        .snippet(coords)
+                        .snippet(cor)
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
                 UiSettings ui = map.getUiSettings();
